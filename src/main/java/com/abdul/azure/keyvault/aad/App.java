@@ -17,7 +17,7 @@ public class App {
 		System.setProperty("https.proxyHost", "example-proxy-server");
 		System.setProperty("https.proxyPort", "8080"); 
 		System.setProperty("http.proxyUser", "proxyuser");
-        System.setProperty("http.proxyPassword", "proxypassword ");
+                System.setProperty("http.proxyPassword", "proxypassword ");
 		System.setProperty("https.proxyUser", "proxyuser");
 		
 		String tenantId = "";
@@ -28,7 +28,7 @@ public class App {
 		String resourceURI = "https://samplekeyvaultstore.vault.azure.net";
 		 
 		String token =   new AzureADTokenService().getToken(clientId, clientSecret, tenantId, grantType, scope);
-		String data = new AzureKeyVaultService(resourceURI,token).getSecret("spring-db-password");
+		String data =    new AzureKeyVaultService(resourceURI,token).getSecret("spring-db-password");
 		System.out.println("Data ::" + data);
 	}
 
